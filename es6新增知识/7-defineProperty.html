@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #444;
+		color:#fff;
+		font-size: 14px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+	#pink{
+		color: pink;
+	}
+</style>
+<body>
+	<pre>
+	<span id="yellow">es6</span>defineProperty方法：
+		var data = {};        //空对象
+		Object.defineProperty(data,'a',{
+			value:5          //data对象增加属性和值
+		});
+		data.a = 10;         //更改a=10
+		console.log(data)    //a=5,默认情况下不能被修改
+
+		------------------------------------------------------
+
+		var data = {};        //空对象
+		Object.defineProperty(data,'a',{
+			value:5,          //data对象增加属性和值
+			writable:true     //设置成可true更改的（默认为false）
+		});
+		data.a = 10;         //更改a=10
+		console.log(data)    //a=10,可更改
+
+		------------------------------------------------------
+
+		var data = {};        //空对象
+		Object.defineProperty(data,'a',{
+			value:5,          //data对象增加属性和值
+			enumerable:true     //设置可在for..in中遍历出来或在Object.keys中列举出来(默认为false)
+		});
+		data.a = 10;         //更改a=10
+		//console.log(data)    //a=5,默认情况下不能被修改
+		console.log(Object.keys(data))//["a"],默认为无法访问
+
+		------------------------------------------------------
+
+		<span id="pink">get/set访问器</span>
+		var data = {};        //空对象
+		Object.defineProperty(data,'a',{
+			set(newValue){    //新赋值时，每次都会访问set
+				console.log(newValue);
+			},   
+			get(){
+				return 5;
+			}
+		});
+		data.a=10;
+		console.log(data)
+
+	</pre>
+
+
+
+</body>
+<script>
+	/*
+	var data = {};        //空对象
+	Object.defineProperty(data,'a',{
+		value:5,          //data对象增加属性和值
+		//writable:true     //设置成可更改的（默认为false）
+		enumerable:true     //设置可在for..in中遍历出来或在Object.keys中列举出来
+	});
+	//data.a = 10;         //更改a=10
+	//console.log(data)    //a=5,默认情况下不能被修改
+	console.log(Object.keys(data))//["a"]
+	*/
+
+	var data = {};        //空对象
+	Object.defineProperty(data,'a',{
+		set(newValue){    //新赋值时，每次都会访问set
+			console.log(newValue);
+		},   
+		get(){
+			return 5;
+		}
+	});
+	data.a=10;
+	console.log(data)
+</script>
+</html>

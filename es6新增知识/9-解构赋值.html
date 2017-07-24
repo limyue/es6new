@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #444;
+		color:#fff;
+		font-size: 14px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+	#pink{
+		color: pink;
+	}
+</style>
+<body>
+	<pre>
+	<span id="yellow">es6 解构赋值</span>
+	<span id="pink">es6允许按照一定的模式，从数组和对象中
+	提取值，对变量进行赋值，这称为解构赋值</span>
+
+	变量赋值
+	let a = 1;
+	let b = 2;
+	解构赋值
+	let [a,b] = [1,2];
+	let [a,b,[c,d],e] = [1,2,[3,4],5];
+	
+	-----------------------------------------------------------
+
+	let obj = {
+		name:"limyue",
+		age:10
+	}
+	//console.log(obj);
+	//let{name:uname,age:uage} = obj;
+	//console.log(uname);
+	//console.log(uage);
+
+	//let{name:name,age:age} = obj;//当键与值一样时，可简写如下：
+	let{name,age} = obj;
+	console.log(name);
+	console.log(age);
+
+	----------------------------------------------------------
+
+	function show(<span id="pink">{b}</span>){
+		console.log(b)
+	}
+	show({  //对象
+		a:1,
+		b:2,
+		c:3
+	})
+
+	</pre>
+
+
+
+</body>
+<script>
+	/*
+	//let [a,b] = [1,2];
+	let [a,b,[c,d],e] = [1,2,[3,4],5];
+	console.log(a)
+	console.log(b)
+	console.log(c)
+	console.log(d)
+	console.log(e)
+	*/
+
+	/*
+	let obj = {
+		name:"limyue",
+		age:10
+	}
+	//console.log(obj);
+	//let{name:uname,age:uage} = obj;
+	//console.log(uname);
+	//console.log(uage);
+
+	//let{name:name,age:age} = obj;//当键与值一样时，可简写如下：
+	let{name,age} = obj;
+	console.log(name);
+	console.log(age);
+	*/
+
+	/*function show({b}){
+		console.log(b)
+	}
+	show({
+		a:1,
+		b:2,
+		c:3
+	})*/
+
+	let [a,b,c] = "你我他hello";
+	console.log(a);
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #444;
+		color:#fff;
+		font-size: 14px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+	#pink{
+		color: pink;
+	}
+</style>
+<body>
+	<pre>
+	<span id="red">要使用Babel， 我们需要nodeJS的环境和npm</span>
+	win+R   
+	（E:  进入某盘符   
+	  dir 查看文件   
+	  cd 进入某文件夹）
+
+	<span id="yellow">安装node.js 安装完毕后自带npm命令行</span>
+
+	1 官方网址 http://nodejs.org/  点击install 下载node-v0.10.22-x86.msi
+
+	2 安装，修改安装目录一路next
+
+	3 测试，输入node -v  命令行输出 v0.10.22 
+
+	配置环境变量：http://www.jianshu.com/p/03a76b2e7e00
+
+	<span id="yellow">安装babel</span>
+	
+	1.在项目内创建babel文件夹，进入bable目录
+
+	2.在babel目录下，创建一个package.json的文件， 内部内容为：
+	{
+	  "name": "my-project",
+	  "version": "1.0.0",
+	  "devDependencies": {
+	  }
+	}
+	3.在工作目录下执行命令安装babel-cli： npm install --save-dev babel-cli
+
+	全局安装：npm install -g babel-cli 
+
+	为什么 请参考资料：
+	http://www.cnblogs.com/PeunZhang/p/5629329.html
+
+	4.创建一个名字为.babelrc的文件
+	{
+	   "presets": [
+	     "es2015"
+	   ],
+	   "plugins": []
+	}
+	5.创建一个test.js 用es6写代码进行验证是否能转为es5
+	//es6
+	let [a,b,c] = [1,2,3];
+	console.log(a,b,c);
+
+	6.如果安装了全局babel，可以通过下面代码从git bash 中验证：
+	babel test.js --presets es2015
+
+
+
+	参考网站：
+	http://www.cnblogs.com/diligenceday/p/5453523.html#_label0
+	http://www.cnblogs.com/luckjun/archive/2013/11/13/3421145.html
+	</pre>
+
+
+
+</body>
+<script>
+
+</script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #444;
+		color:#fff;
+		font-size: 14px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+	#pink{
+		color: pink;
+	}
+</style>
+<body>
+	<pre>
+	<span id="yellow">es5 没有引入class类的概念：</span>
+	构造函数：
+		
+	function Person(name,age){
+		this.name = name,
+		this.age = age,
+		this.showPeople = function(){
+			alert(`姓名${this.name},年龄${this.age}`)
+		}
+	}
+	//var Person1 = new Person("limyue","21");
+	//Person1.showPeople();
+	
+	//继承
+	function Manager(name,age,password){
+		Person.call(this,name,age);
+		this.password = password;
+		this.user = function(){
+			alert(`姓名${name}，年龄${age}，密码${password}`)
+		}
+	}
+	var Manager1 = new Manager("xiaoxiao","18","123456");
+	Manager1.user();
+		
+
+	</pre>
+	<pre>
+	<span id="yellow">es6 引入class类的概念：</span>
+	class Person{
+		//构造函数constructor(){}
+		constructor(name,age){  
+			this.name = name;
+			this.age = age;
+		}
+		showPeople(){
+			alert(`姓名${this.name},年龄${this.age}`)
+		}
+		//静态方法
+		static getMethod(){
+			return "hello";
+		}
+	}
+	//var Person1 = new Person("li","11")
+	//Person1.showPeople()
+	//Person1.getMethod()  //报错--静态方法不能别重新构造
+	console.log(Person.getMethod())
+
+	//继承extends
+	class Manager extends Person{
+		constructor(name,age,password){
+			super(name,age);
+			this.password = password;
+		}
+	}
+	var Manager1 = new Manager("yue","1","1234");
+	//Manager1.showPeople();	
+		
+	</pre>
+
+
+
+</body>
+<script>
+	/*	
+	function Person(name,age){
+		this.name = name,
+		this.age = age,
+		this.showPeople = function(){
+			alert(`姓名${this.name},年龄${this.age}`)
+		}
+	}
+	//var Person1 = new Person("limyue","21");
+	//Person1.showPeople();
+	
+	//继承
+	function Manager(name,age,password){
+		Person.call(this,name,age);
+		this.password = password;
+		this.user = function(){
+			alert(`姓名${name}，年龄${age}，密码${password}`)
+		}
+	}
+	var Manager1 = new Manager("xiaoxiao","18","123456");
+	Manager1.user();
+	*/
+
+	class Person{
+		//构造函数constructor(){}
+		constructor(name,age){  
+			this.name = name;
+			this.age = age;
+		}
+		showPeople(){
+			alert(`姓名${this.name},年龄${this.age}`)
+		}
+		//静态方法
+		static getMethod(){
+			return "hello";
+		}
+	}
+	//var Person1 = new Person("li","11")
+	//Person1.showPeople()
+	//Person1.getMethod()  //报错--静态方法不能别重新构造
+	console.log(Person.getMethod())
+
+	//继承extends
+	class Manager extends Person{
+		constructor(name,age,password){
+			super(name,age);
+			this.password = password;
+		}
+	}
+	var Manager1 = new Manager("yue","1","1234");
+	//Manager1.showPeople();
+
+
+</script>
+</html>
