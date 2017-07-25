@@ -21,3 +21,11 @@ es6新增知识
   Object.assign(obj2,obj);
   console.log(obj2);
   console.log(Object.keys(obj2));
+  
+  7.defineProperty方法
+  8.class类  构造方法constructor 继承extends
+  9.解构赋值
+  
+  
+  10. bable 环境配置
+  11. vue-cli 配置
